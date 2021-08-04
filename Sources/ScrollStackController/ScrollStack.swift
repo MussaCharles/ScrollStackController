@@ -37,10 +37,10 @@ open class ScrollStack: UIScrollView, UIScrollViewDelegate {
     // MARK: Default Properties
     
     private static let defaultRowInsets = UIEdgeInsets(
-        top: 12,
-        left: UITableView().separatorInset.left,
-        bottom: 12,
-        right: UITableView().separatorInset.left
+        top: 20,
+        left: 20,
+        bottom: 20,
+        right: 20
     )
     
     private static let defaultRowPadding: UIEdgeInsets = .zero
