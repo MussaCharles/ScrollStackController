@@ -121,8 +121,9 @@ open class ScrollStack: UIScrollView, UIScrollViewDelegate {
     /// Insets for rows.
     open var rowInsets: UIEdgeInsets = ScrollStack.defaultRowInsets {
         didSet {
-            rows.forEach { row in
+            rows.enumerated().forEach { (index,row) in
                 row.rowInsets = rowInsets
+                self.reloadRow(index: index, animated: false, completion: nil)
             }
         }
     }
@@ -130,8 +131,9 @@ open class ScrollStack: UIScrollView, UIScrollViewDelegate {
     /// Padding for rows `contentView` (the view of the view controller handled by row).
     open var rowPadding: UIEdgeInsets = ScrollStack.defaultRowPadding {
         didSet {
-            rows.forEach { row in
+            rows.enumerated().forEach { (index,row) in
                 row.rowPadding = rowPadding
+                self.reloadRow(index: index, animated: false, completion: nil)
             }
         }
     }
